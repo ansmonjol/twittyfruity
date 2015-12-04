@@ -1,6 +1,6 @@
 default: &default
   adapter: postgresql
-  username: alexandre
+  encoding: unicode
   database: twittifruiti
   pool: 5
   timeout: 5000
