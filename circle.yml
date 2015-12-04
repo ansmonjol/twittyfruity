@@ -1,6 +1,15 @@
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: salty-earth-6717
+
+
+
 dependencies:
   post:
     - bundle exec rake assets:precompile
+
 test:
   post:
     - bundle exec rspec spec/
