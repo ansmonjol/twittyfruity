@@ -9,6 +9,7 @@ deployment:
 dependencies:
   post:
     - bundle exec rake assets:precompile
+    - bundle exec rake db:migrate
 
 test:
   post:
