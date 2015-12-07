@@ -9,8 +9,22 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
+
+
+// Resources
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+//= require jquery
+//= require bootstrap-sprockets
+
+
+
+// Created
+//= require main
+
+
+// Set turbolink at the end to enable jquery without page reload with jquery.turbolinks
+//= require turbolinks

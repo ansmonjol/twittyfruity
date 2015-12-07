@@ -1,2 +1,13 @@
-<h1>tweet#index</h1>
-<p>Find me in app/views/tweet/index.html.erb</p>
+<h1>Liste de vos fruitos !</h1>
+<br>
+<%= @tweets.find_each do |tweet| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= link_to "#{tweet.user.username}".capitalize , user_path(tweet.user) %></h3> at <%= tweet.created_at %>
+  </div>
+  <div class="panel-body">
+    <%= tweet.message %>
+  </div>
+</div>
+<br>
+<% end %>

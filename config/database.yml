@@ -7,13 +7,13 @@ default: &default
 
 development:
   <<: *default
-  host: localhost
+  # host: localhost
   # database: db/development.sqlite3
 
 test:
   <<: *default
-  host: localhost
-  database: test.twittifruiti
+  # host: localhost
+  database: twittifruiti-test
   # database: db/test.sqlite3
   # Warning: The database defined as "test" will be erased and
   # re-generated from your development database when you run "rake".
@@ -21,4 +21,4 @@ test:
 
 production:
   <<: *default
-  host: localhost
+  # host: localhost

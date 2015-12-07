@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :users do
+    post :follow
+    post :unfollow
     resources :tweets
   end
 

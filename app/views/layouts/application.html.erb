@@ -8,16 +8,7 @@
 </head>
 <body>
 
-<nav>
-  <% if current_user.present? %>
-    <%= link_to "Accueil", user_tweets_path(current_user) %> |
-    <%= link_to "#{current_user.username}".capitalize , user_path(current_user) %> |
-    <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Connexion", new_user_session_path %>
-    <%= link_to "Inscription", new_user_registration_path %>
-  <% end %>
-</nav>
+<%= render partial: '/layouts/nav' %>
 
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -26,7 +17,19 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
-<%= yield %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="flexbox-container">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <%= yield %>
+      </div>
+      <div class="col-lg-1"></div>  
+      </div>  
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

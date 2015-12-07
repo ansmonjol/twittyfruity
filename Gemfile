@@ -45,6 +45,13 @@ gem 'simple_form'
 # Don't let your server speak too much
 gem 'quiet_assets'
 
+# Bootstrap scss
+gem 'bootstrap-sass', '~> 3.3.6'
+
+# Make jquery events work with turbolink
+gem 'jquery-turbolinks'
+
+
 group :production do
 
 end

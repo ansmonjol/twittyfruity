@@ -8,3 +8,9 @@
 
 
 alex = User.create!(username: "alexandre", password: "alexandre", email: "alex@gmail.com", admin: true)
+user2 = User.create!(username: "azertyui", password: "azertyui", email: "azertyui@gmail.com")
+
+
+tweet1 = Tweet.create!(user: alex, message: "hello")
+tweet2 = Tweet.create!(user: user2, message: "hi")
+tweet3 = Tweet.create!(user: user2, message: "world")

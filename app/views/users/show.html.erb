@@ -1,1 +1,30 @@
-show user <%= current_user.username %> page
+<h2>Page de <%= @user.username %></h2>
+
+<!-- Follow -->
+<br>
+<% if current_user != @user %>
+  <% if current_user.follow?(@user) %>
+    <%= link_to 'Unfollow', user_unfollow_path(@user), method: :post, class: "btn btn-warning" %>
+  <% else %>
+    <%= link_to 'Follow', user_follow_path(@user), method: :post, class: "btn btn-primary" %>
+  <% end %>
+  <% end %>
+<br><br>
+
+<!-- List -->
+<%= @tweets.find_each do |tweet| %>
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= "#{tweet.user.username}".capitalize  %></h3> at <%= tweet.created_at %>
+  </div>
+  <div class="panel-body">
+    <%= tweet.message %>
+  </div>
+</div>
+<% end %>
+<br>
+
+<!-- Action -->
+<% if current_user == @user %>
+  <%= link_to 'New fruit', new_user_tweet_path(current_user) %>
+<% end %>
