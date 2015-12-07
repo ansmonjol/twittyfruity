@@ -7,12 +7,12 @@ class UsersController < ApplicationController
 
   def follow
     current_user.follow!(@user)
-    redirect_to user_path(@user), notice: "You now folow #{@user.username}"
+    redirect_to user_path(@user), notice: "You now folow #{@user.username}, high five !"
   end
 
   def unfollow
     current_user.unfollow!(@user).delete
-    redirect_to user_path(@user), notice: "You've unfolow #{@user.username}" 
+    redirect_to user_path(@user), alert: "You've unfolow #{@user.username}" 
   end
 
 
