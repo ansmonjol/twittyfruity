@@ -12,13 +12,7 @@ class User < ActiveRecord::Base
   has_many :following, :class_name => 'Follower', :foreign_key => 'follower_id'
 
   # Validations
-  validate :validate_username
-
-  def validate_username
-    if User.where(email: username).exists?
-      errors.add(:username, :invalid)
-    end
-  end
+  validates :username, :presence => true, :uniqueness => {:case_sensitive => false }
 
   # Set username to user authentification
   def self.find_first_by_auth_conditions(warden_conditions)
