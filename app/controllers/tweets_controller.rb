@@ -2,7 +2,10 @@ class TweetsController < ApplicationController
   before_filter :get_current_user, only: [:index, :show]
 
   def index
-    @tweets = current_user.tweets
+    user_ids = []
+    current_user.following.each do |f| user_ids << f.user.id end
+    follower_tweets_array = Tweet.where(user: user_ids)
+    @tweets = follower_tweets_array
   end
 
   def new

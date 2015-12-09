@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
   # Validations
   validates :username, :presence => true, :uniqueness => {:case_sensitive => false }
 
+  # Scopes
+  scope :except_user, -> (user) {where("id != ?", user)}
+
   # Set username to user authentification
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
@@ -42,7 +45,7 @@ class User < ActiveRecord::Base
   end
 
   def follow!(user)
-    following.first_or_create!(user: user, follower: self)
+    following.find_or_create_by!(user: user, follower: self)
   end
 
   def unfollow!(user)

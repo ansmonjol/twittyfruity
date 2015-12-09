@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav">
         <% if current_user.present? %>
           <li><%= link_to "Fruits", user_tweets_path(current_user) %></li>
+          <li><%= link_to "Fuitos", users_path %></li>
           <li><%= link_to "#{current_user.username}".capitalize , user_path(current_user) %></li>
           <% if current_user.admin %>
             <li><%= link_to "Admin", rails_admin_path %></li>
