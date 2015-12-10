@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def unfollow
     current_user.unfollow!(@user).delete
-    redirect_to :back, alert: "You've unfolow #{@user.username}" 
+    redirect_to users_path, alert: "You've unfolow #{@user.username}" 
   end
 
 
