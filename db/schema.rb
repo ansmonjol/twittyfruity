@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 20151207120048) do
     t.string   "username"
     t.string   "avatar"
     t.boolean  "admin",                  default: false
-    t.integer  "followed_users_ids"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

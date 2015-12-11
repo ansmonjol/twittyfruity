@@ -13,7 +13,7 @@
 
 <!-- List -->
 <%= @tweets.find_each do |tweet| %>
-  <div class="panel panel-default">
+  <div class="panel panel-default btn btn-default">
   <div class="panel-heading">
     <h3 class="panel-title"><%= "#{tweet.user.username}".capitalize  %></h3> at <%= tweet.created_at %>
   </div>
