@@ -21,6 +21,7 @@ $(function() {
 
     if (activePage == currentPage) {
       $(this).parent().addClass('active'); 
+      $(this).addClass('nav-active');
     } 
   });
 

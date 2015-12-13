@@ -3,7 +3,7 @@
 	margin: -1px;
 	margin-left:-20px;
 	margin-right: 10px;
-	height: 75px;
+	height: 58px;
 	width: 250px;
 	float: left;
 	background: #49c5fc;
@@ -15,4 +15,22 @@
 }
 .logo:hover{
 	color: transparent;
+}
+.navbar{
+	height: 70px;
+	background-color: #49C5FC;
+	border: none;
+	border-radius: none !important;
+}
+.nav li a{
+	margin-top: 10px;
+	color: white !important;
+}
+.navbar-brand{
+	margin-top: 10px;
+	color: white !important;
+}
+.nav-active{
+	background-color: #49C5FC !important;
+	border-bottom: 2px solid white;
 }
