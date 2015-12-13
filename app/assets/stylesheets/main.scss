@@ -1,1 +1,18 @@
-
+.logo{
+	display: block;
+	margin: -1px;
+	margin-left:-20px;
+	margin-right: 10px;
+	height: 75px;
+	width: 250px;
+	float: left;
+	background: #49c5fc;
+	background-image: url('fruitter_logo.png');
+	background-size: auto 45px;
+	color: transparent;
+	background-repeat: no-repeat;
+	background-position: 20px 14px;
+}
+.logo:hover{
+	color: transparent;
+}
