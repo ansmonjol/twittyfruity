@@ -1,5 +1,7 @@
 ---
 fr:
+  remember_me: "Se souvenir de moi"
+  signin_title: "Connexion"
   activerecord:
     errors:
       messages:

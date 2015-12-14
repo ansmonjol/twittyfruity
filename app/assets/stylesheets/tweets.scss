@@ -1,3 +1,17 @@
 // Place all the styles related to the tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.tweet-time-ago{
+  float: right;
+  margin-top: -16px;
+}
+
+.home-tweets-container{
+  margin-top: 70px;
+  color: white;
+}
+.home-tweet-message{
+  color: black;
+}

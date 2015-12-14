@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
 
   # Validations
   validates :username, :presence => true, :uniqueness => {:case_sensitive => false }
+  validates :email, format: { with: /\w*@\w*\.\w*/ }, uniqueness: true
 
   # Scopes
   scope :except_user, -> (user) {where("id != ?", user)}
