@@ -1,4 +1,4 @@
-<h2>Page de <%= @user.username %></h2>
+<!-- <h2>Page de <%= @user.username %></h2> -->
 
 <!-- Follow -->
 <br>
@@ -11,20 +11,30 @@
   <% end %>
 <br><br>
 
-<!-- List -->
-<%= @tweets.find_each do |tweet| %>
-  <div class="panel panel-default btn btn-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= "#{tweet.user.username}".capitalize  %></h3> at <%= tweet.created_at %>
-  </div>
-  <div class="panel-body">
-    <%= tweet.message %>
-  </div>
-</div>
-<% end %>
-<br>
 
-<!-- Action -->
-<% if current_user == @user %>
-  <%= link_to 'New fruit', new_user_tweet_path(current_user) %>
+<!-- Stats -->
+<div class="col-sm-2">
+  <%= @user.username %> <br>
+  Tweets : <%= @user.tweets.count %> <br>
+  Following : <%= @user.following.count %> <br>
+  Followers : <%= @user.followers.count %> 
+</div>
+
+
+<!-- List -->
+<div class="col-sm-8">
+<%= @tweets.find_each do |tweet| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= link_to "#{tweet.user.username}".capitalize , user_path(tweet.user) %></h3> 
+      <span class="tweet-time-ago"><%= time_ago_in_words tweet.created_at %></span>
+    </div>
+    <div class="panel-body home-tweet-message">
+      <%= tweet.message %>
+    </div>
+  </div>
+  <br>
 <% end %>
+</div>
+
+

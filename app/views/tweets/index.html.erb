@@ -76,6 +76,14 @@
 	</div>
 
 <br>
+<!-- Action -->
+<% if current_user == @user %>
+  <%= link_to 'New fruit', new_user_tweet_path(current_user) %>
+<% end %>
+<br>
+<br>
+<br>
+<br>  
 <%= @tweets.find_each do |tweet| %>
 <div class="panel panel-default">
   <div class="panel-heading">

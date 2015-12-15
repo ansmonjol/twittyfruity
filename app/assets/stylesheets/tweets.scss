@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .col1{
 	width: 350px;
 	float: left;
@@ -192,4 +193,17 @@
 .tweet_retweet:hover{
 	background-image: url('retweet_icon_hover.png');
 	color: #27ae60;
+}
+
+.tweet-time-ago{
+  float: right;
+  margin-top: -16px;
+}
+
+.home-tweets-container{
+  margin-top: 70px;
+  color: white;
+}
+.home-tweet-message{
+  color: black;
 }

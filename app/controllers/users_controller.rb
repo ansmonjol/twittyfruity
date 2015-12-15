@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.except_user(current_user)
+    @tweet = Tweet.new
   end
 
   def show
