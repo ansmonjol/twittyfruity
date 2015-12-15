@@ -1,7 +1,6 @@
 <!-- <h2>Page de <%= @user.username %></h2> -->
 
 <!-- Follow -->
-<br>
 <% if current_user != @user %>
   <% if current_user.follow?(@user) %>
     <%= link_to 'Unfollow', user_unfollow_path(@user), method: :post, class: "btn btn-warning" %>
@@ -9,32 +8,56 @@
     <%= link_to 'Follow', user_follow_path(@user), method: :post, class: "btn btn-primary" %>
   <% end %>
   <% end %>
-<br><br>
 
-
-<!-- Stats -->
-<div class="col-sm-2">
-  <%= @user.username %> <br>
-  Tweets : <%= @user.tweets.count %> <br>
-  Following : <%= @user.following.count %> <br>
-  Followers : <%= @user.followers.count %> 
-</div>
-
-
-<!-- List -->
-<div class="col-sm-8">
-<%= @tweets.find_each do |tweet| %>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title"><%= link_to "#{tweet.user.username}".capitalize , user_path(tweet.user) %></h3> 
-      <span class="tweet-time-ago"><%= time_ago_in_words tweet.created_at %></span>
+<div>
+    <div class="col1">
+      <div class="profile_bloc">
+        <div class="profile_bloc_pic"></div>
+        <div class="profile_bloc_infos">
+          <div class="profile_bloc_name"><h1><%= current_user.username.capitalize %></h1></div>
+          <!--<div class="profile_bloc_username">@thomlemee</div>-->
+          <div class="profile_bloc_stat">
+            <div class="profile_bloc_stat_label">Tweets</div>
+            <div class="profile_bloc_stat_number"><%= @user.tweets.count %></div>
+          </div>
+          <div class="profile_bloc_stat">
+            <div class="profile_bloc_stat_label">Following</div>
+            <div class="profile_bloc_stat_number"><%= @user.following.count %></div>
+          </div>
+          <div class="profile_bloc_stat">
+            <div class="profile_bloc_stat_label">Followers</div>
+            <div class="profile_bloc_stat_number"><%= @user.followers.count %></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="panel-body home-tweet-message">
-      <%= tweet.message %>
+
+    <div class="col2">
+      <!--<div class="post_fruit">
+
+        <textarea placeholder="What's up dude ?"></textarea>
+
+        <input type="submit" value="Post a fruit" />
+
+      
+      </div>-->
+
+      <div class="feed"><!-- List-->
+        <%= @tweets.find_each do |tweet| %>
+        <div class="tweet">
+          <div class="tweet_pic1"></div>
+            <span class="tweet_name"><%= current_user.username.capitalize %></span><span class="tweet_username">@curtis</span><span class="tweet_date"><%= time_ago_in_words tweet.created_at %></span>
+            <span class="tweet_content">
+              <%= tweet.message %>
+          </span>
+          <a href="#" class="tweet_retweet">2</a>
+        </div>
+        <% end %>
+      </div> 
     </div>
   </div>
-  <br>
-<% end %>
-</div>
+
+
+
 
 

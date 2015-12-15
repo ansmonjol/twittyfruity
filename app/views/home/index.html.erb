@@ -11,31 +11,31 @@
 		<h1>Bienvenue sur Fruitter</h1>
 	</div>
 	<div class="intro col-sm-6 col-sm-offset-2">
-		<p class="">Connectez-vous à vos amis — et d'autres personnes fascinantes. Recevez des mises à jour instantanées sur les choses qui vous intéressent. Et regardez les événements se dérouler, en temps réel, sous tous les angles.</p>
+		<p>Connectez-vous à vos amis — et d'autres personnes fascinantes. Recevez des mises à jour instantanées sur les choses qui vous intéressent. Et regardez les événements se dérouler, en temps réel, sous tous les angles.</p>
 	</div>
-</div>
-<br>
 
-<div class="col-sm-8 col-sm-offset-2 home-tweets-container">
-	<h3>Plus de 5000 fruitos on déjà rejoinds l'aventure</h3>
 	<br>
-	<h4>Ils ont fruité :</h4>
-	<!-- Random tweets -->
-	<% @random_tweets.each do |tweet| %>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title"><%= link_to "#{tweet.user.username}".capitalize , user_path(tweet.user) %></h3> 
-			<span class="tweet-time-ago"><%= time_ago_in_words tweet.created_at %></span>
+
+	<div class="col-sm-8 col-sm-offset-2 home-tweets-container">
+		<h3>Plus de 5000 fruitos on déjà rejoinds l'aventure</h3>
+		<br>
+		<h4>Ils ont fruité :</h4>
+		<!-- Random tweets -->
+		<% @random_tweets.each do |tweet| %>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><%= link_to "#{tweet.user.username}".capitalize , user_path(tweet.user) %></h3> 
+				<span class="tweet-time-ago"><%= time_ago_in_words tweet.created_at %></span>
+			</div>
+			<div class="panel-body home-tweet-message">
+				<%= tweet.message %>
+			</div>
 		</div>
-		<div class="panel-body home-tweet-message">
-			<%= tweet.message %>
-		</div>
+		<br>
+		<% end %>
+		
 	</div>
-	<br>
-	<% end %>
-	
+
 </div>
-
-
 
 

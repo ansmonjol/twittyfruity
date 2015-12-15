@@ -13,17 +13,20 @@
 <% end %>
 
 <!-- New fruit -->
-<div class="form-group">
-    <%= f.label :message, class: 'col-sm-2 control-label'%>
-  <div class="col-sm-8">
-    <%= f.input :message, :html => {class: "form-control"}, placeholder: 'Your message', label: false %>
-  </div>
-</div>
 
-<%= f.button :submit,  class: 'btn btn-primary' %> 
+    <div class="form-group">
+        <%= f.label :message, class: 'col-sm-2 control-label'%>
+      <div class="col-sm-10">
+        <%= f.input :message, :html => {class: "form-control"}, placeholder: 'Your message', label: false %>
+      </div>
+    </div>
 
 
-<% end %>
+    <%= f.button :submit,  class: 'btn btn-primary' %> 
+
+
+    <% end %>
+ 
 
 
 
