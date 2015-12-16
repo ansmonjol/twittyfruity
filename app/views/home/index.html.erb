@@ -18,24 +18,31 @@
 
 	<div class="col-sm-8 col-sm-offset-2 home-tweets-container">
 		<h3>Plus de 5000 fruitos on déjà rejoinds l'aventure</h3>
-		<br>
+		
 		<h4>Ils ont fruité :</h4>
 		<!-- Random tweets -->
 		<% @random_tweets.each do |tweet| %>
-		<div class="panel panel-default">
+		<!--<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title"><%= link_to "#{tweet.user.username}".capitalize , user_path(tweet.user) %></h3> 
 				<span class="tweet-time-ago"><%= time_ago_in_words tweet.created_at %></span>
-			</div>
-			<div class="panel-body home-tweet-message">
-				<%= tweet.message %>
-			</div>
-		</div>
-		<br>
-		<% end %>
-		
+			</div>-->
+				<div class="col2">
+					<div class="feed"><!-- List-->
+				        <div class="tweet">
+				          <div class="tweet_pic1"></div>
+				            <span class="tweet_name"><%= link_to "#{tweet.user.username}".capitalize, user_path(tweet.user)%></span><span class="tweet_username">@curtis</span><span class="tweet_date"><%= time_ago_in_words tweet.created_at %></span>
+				            <span class="tweet_content" style="color: black;">
+				              <%= tweet.message %>
+				          </span>
+				          <a href="#" class="tweet_retweet">2</a>
+				        </div>
+						<% end %>	
+					</div>
+				</div>
+		<!--</div>-->
 	</div>
-
 </div>
+
 
 

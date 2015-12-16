@@ -10,23 +10,20 @@
     <% end %>
   </ul>
 </div>
-<% end %>
 
+<% end %>
 <!-- New fruit -->
 
-    <div class="form-group">
-        <%= f.label :message, class: 'col-sm-2 control-label'%>
-      <div class="col-sm-10">
-        <%= f.input :message, :html => {class: "form-control"}, placeholder: 'Your message', label: false %>
-      </div>
-    </div>
-
-
-    <%= f.button :submit,  class: 'btn btn-primary' %> 
-
-
+    <!--<div class="form-group">-->
+        <%= f.label :message%>
+      <!--<div class="col-sm-10">--><br>
+        <%= f.input :message, input_html: {class: "textarea"}, placeholder: 'Your message', label: false %>
+     <!-- </div> input_html: { class: "form-control" }, required: true
+    </div>-->
+    <br>
+    <%= f.button :submit,  class: 'post_fruit' %>
     <% end %>
- 
+    
 
 
 

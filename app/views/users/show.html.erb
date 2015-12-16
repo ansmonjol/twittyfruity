@@ -33,29 +33,24 @@
     </div>
 
     <div class="col2">
-      <!--<div class="post_fruit">
-
-        <textarea placeholder="What's up dude ?"></textarea>
-
-        <input type="submit" value="Post a fruit" />
-
-      
-      </div>-->
-
       <div class="feed"><!-- List-->
         <%= @tweets.find_each do |tweet| %>
         <div class="tweet">
           <div class="tweet_pic1"></div>
-            <span class="tweet_name"><%= current_user.username.capitalize %></span><span class="tweet_username">@curtis</span><span class="tweet_date"><%= time_ago_in_words tweet.created_at %></span>
-            <span class="tweet_content">
-              <%= tweet.message %>
-          </span>
-          <a href="#" class="tweet_retweet">2</a>
+            <span class="tweet_name"><%= link_to "#{tweet.user.username}".capitalize, user_path(tweet.user)%></span><span class="tweet_username">@curtis</span><span class="tweet_date"><%= time_ago_in_words tweet.created_at %></span>
+                    <span class="tweet_content" style="color: black;">
+                      <%= tweet.message %>
+                  </span>
+                  <a href="#" class="tweet_retweet">2</a>
         </div>
         <% end %>
       </div> 
     </div>
   </div>
+
+          
+                    
+             
 
 
 

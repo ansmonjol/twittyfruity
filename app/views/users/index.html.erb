@@ -1,12 +1,15 @@
 <h1>Trouver un fruitos</h1>
-
+<br><br>
 <%= @users.find_each do |user| %>
-  <%= link_to "#{user.username}", user_path(user) %>
+<div class="profile">
+  <%= link_to "#{user.username.capitalize}", user_path(user), class: "tweet_name" %>
+</div>
   <br>
   <% if current_user.follow?(user) %>
-    <%= link_to 'Unfollow', user_unfollow_path(user), method: :post, class: "btn btn-warning" %>
+    <%= link_to 'Unfollow', user_unfollow_path(user), method: :post, class: "post_fruit" %>
   <% else %>
-    <%= link_to 'Follow', user_follow_path(user), method: :post, class: "btn btn-primary" %>
+    <%= link_to 'Follow', user_follow_path(user), method: :post, class: "post_fruit" %>
   <% end %>
-  <br><br>
+  <br><br><br><br>
 <% end %>
+
