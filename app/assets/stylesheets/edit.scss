@@ -1,0 +1,27 @@
+.textarea_edit{
+	outline: none;
+	resize: none;
+	border: 1px solid #49c5fc;
+	margin: 0px 10px 0px 0px;
+	width: 130px;
+	height: 40px;
+	padding: 12px;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding-top: 9px;
+	float: left;
+}
+
+.post_back{
+	width: auto;
+	float: left;
+	margin-left: 0;
+	border: none;
+	border-radius: 0;
+	font-family: 'Karla', sans-serif;
+	background: red;
+	color: white;
+	padding: 10px 30px;
+	font-size: 14px;
+	outline: none;
+}

@@ -4,15 +4,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :username %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :email, input_html: {class: "textarea_edit"}, required: true, autofocus: true %><br><br>
+    <%= f.input :username, input_html: {class: "textarea_edit"}%><br><br>
+    <%= f.input :password, input_html: {class: "textarea_edit"}, required: true, hint: (" (#{@minimum_password_length} characters minimum)" if @minimum_password_length) %><br><br>
+    <%= f.input :password_confirmation, required: true,input_html: {class: "textarea_edit"} %><br><br>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up",  class: 'post_fruit' %>
   </div>
 <% end %>
-
+<br><br><br>
 <%= render "devise/shared/links" %>

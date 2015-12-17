@@ -2,14 +2,14 @@
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
-    <%= f.input :login, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <%= f.input :login, required: false, autofocus: true, input_html: {class: "textarea_edit"} %><br><br>
+    <%= f.input :password, required: false, input_html: {class: "textarea_edit"}  %><br><br>
+    <%= f.input :remember_me, input_html: {class: "textarea_edit"} , as: :boolean if devise_mapping.rememberable? %><br>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class: 'post_fruit' %>
   </div>
 <% end %>
-
+<br><br><br>
 <%= render "devise/shared/links" %>
