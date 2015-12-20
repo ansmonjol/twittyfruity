@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
 
     def set_user_avatar
       if avatar.blank?
-        avatar = "https://d1iu1mag0u723c.cloudfront.net/assets/no-avatar-25359d55aa3c93ab3466622fd2ce712d.jpg"
+        avatar = "no-avatar.jpg"
       end
     end
 
