@@ -21,6 +21,7 @@
 	background-color: #49C5FC;
 	border: none;
 	border-radius: none !important;
+	margin-bottom: 50px;
 }
 .nav li a{
 	margin-top: 10px;
@@ -33,4 +34,10 @@
 .nav-active{
 	background-color: #49C5FC !important;
 	border-bottom: 2px solid white;
+}
+.alert{
+	width: 100%;
+	z-index: 999;
+	position: absolute;
+	top: 80px;
 }

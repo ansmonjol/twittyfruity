@@ -93,8 +93,8 @@ body{
 	width: 100%;
 	height: 100px;
 	position: relative;
-	margin-top: 50px;
-	margin-bottom: 85px;
+	margin-top: 10px;
+	margin-bottom: 15px;
 	background-color: white;
 	border: 1px #49c5fc solid;
 	padding: 2%;
@@ -222,6 +222,9 @@ body{
 .home-tweets-container{
   margin-top: 70px;
   color: white;
+  h4{
+  	margin-top: 50px;
+  }
 }
 .home-tweet-message{
   color: black;
