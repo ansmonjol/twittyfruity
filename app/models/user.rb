@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   # Validations
   validates :username, :presence => true, :uniqueness => {:case_sensitive => false }
-  validates :email, format: { with: /\w*@\w*\.\w*/ }, uniqueness: true
+  validates :email, uniqueness: true, format: { with: /.+@.+\..+/i, on: :create }
   validates :avatar, format: { with: /(jpg|jpeg|gif|png)/ }
 
   # Scopes
