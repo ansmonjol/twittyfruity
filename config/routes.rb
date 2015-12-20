@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   resources :users do
     post :follow
     post :unfollow
-    resources :tweets
+    resources :tweets do
+      post :retweet
+    end
   end
 
   root 'home#index'

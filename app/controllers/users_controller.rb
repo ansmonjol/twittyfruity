@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @tweets = Tweet.tweets_of_user(@user)
+    @tweets = @user.tweets
   end
 
   def follow

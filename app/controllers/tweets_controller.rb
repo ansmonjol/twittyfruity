@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_filter :get_current_user, only: [:index, :show]
+  before_filter :get_current_tweet, only: [:retweet]
 
   def index
     user_ids = []
@@ -22,6 +23,11 @@ class TweetsController < ApplicationController
     end
   end
 
+  def retweet
+    current_user.retweet(@tweet)
+    redirect_to :back
+  end
+
 
 
   private
@@ -32,5 +38,9 @@ class TweetsController < ApplicationController
 
     def get_current_user
       @user = User.find(params[:user_id].present? ? params[:user_id] : params[:id])
+    end
+
+    def get_current_tweet
+      @tweet = Tweet.find(params[:tweet_id])
     end
 end

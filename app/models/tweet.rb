@@ -1,6 +1,7 @@
 class Tweet < ActiveRecord::Base
   # Associations
   belongs_to :user
+  has_many :retweeted_tweets, :class_name => 'Retweets', :foreign_key => 'user_id'
 
   # Validation
   validates :user, presence: true

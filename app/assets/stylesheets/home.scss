@@ -5,8 +5,7 @@
 	margin: 0;
 	top:0;
 	bottom: 0;
-	background: image-url('raisins.jpeg') center no-repeat fixed;
-	background-size: cover;
+	background-color: black;
 }
 
 .title{
@@ -19,12 +18,14 @@
 }
 
 .filtre{
+	opacity: 0.6;	 
+	img{
+
 	position: absolute;
 	width: 100%;
-	height: auto;
+	height: 100%;
 	margin: 0;
 	top:0;
 	bottom: 0;
-	background-color: black;
-	opacity: 0.6;	 
+	}
 }

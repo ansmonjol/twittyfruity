@@ -1,4 +1,4 @@
-<h1>Liste de vos fruitos </h1>
+<h1>Fil d'actu-fruit</h1>
 <br>  
 <%= @tweets.find_each do |tweet| %>
 <div class="col2">
@@ -9,7 +9,7 @@
     <span class="tweet_content" style="color: black;">
       <%= tweet.message %>
     </span>
-    <a href="#" class="tweet_retweet">2</a>
+    <%= link_to image_tag('retweet_icon.png'), user_tweet_retweet_path(current_user, tweet), method: :post, class: "tweet_retweet" %>
   </div>
   <% end %>	
 </div>

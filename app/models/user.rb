@@ -10,10 +10,12 @@ class User < ActiveRecord::Base
   has_many :tweets
   has_many :followers, :class_name => 'Follower', :foreign_key => 'user_id'
   has_many :following, :class_name => 'Follower', :foreign_key => 'follower_id'
+  has_many :retweets, :class_name => 'Retweet', :foreign_key => 'tweet_id'
 
   # Validations
   validates :username, :presence => true, :uniqueness => {:case_sensitive => false }
   validates :email, format: { with: /\w*@\w*\.\w*/ }, uniqueness: true
+  validates :avatar, format: { with: /(jpg|jpeg|gif|png)/ }
 
   # Scopes
   scope :except_user, -> (user) {where("id != ?", user)}
@@ -53,7 +55,11 @@ class User < ActiveRecord::Base
   end
 
   def unfollow!(user)
-    return following.where(user: user, follower: self).first
+    following.where(user: user, follower: self).first
+  end
+
+  def retweet(tweet)
+    retweets.find_or_create_by!(user: self, tweet: tweet)
   end
 
 

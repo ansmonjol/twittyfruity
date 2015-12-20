@@ -187,35 +187,33 @@ body{
 .tweet_date {
 	float: right;
 	color: #777676;
-	font-size: 0.7rem;
+	font-size: 1.1rem;
 	margin-top: 6px;
 	margin-right: 6px;
 }
 
 .tweet_content{
-	font-size: 1.1rem;
+	font-size: 1.4rem;
 	display: block;
 	line-height: 1.2;
 	margin-top: 6px;
 }
 
 .tweet_retweet{
-	display: block;
-	background-image: url('retweet_icon.png');
-	height: 19px;
-	width: 33px;
-	background-repeat: no-repeat;
-	float: right;
-	margin-top: 6px;
-	margin-right: 15px;
-	background-position: left top;
-	background-size: 19px auto;
-	text-align: left;
-	color: #BAB5B5;
-	text-decoration: none;
-	font-weight: bold;
-	font-size: 15px;
-	padding-left: 23px;
+	img{
+		display: block;
+		height: 19px;
+		width: 43px;
+		float: right;
+		margin-top: 6px;
+		margin-right: 15px;
+		text-align: left;
+		color: #BAB5B5;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 15px;
+		padding-left: 23px;
+	}
 }
 
 .tweet_retweet:hover{
