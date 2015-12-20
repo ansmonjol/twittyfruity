@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
   # Scopes
   scope :except_user, -> (user) {where("id != ?", user)}
 
+  # Callbacks
+  before_save :set_user_avatar
+
   # Set username to user authentification
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
@@ -52,6 +55,16 @@ class User < ActiveRecord::Base
   def unfollow!(user)
     return following.where(user: user, follower: self).first
   end
+
+
+
+  private
+
+    def set_user_avatar
+      if avatar.blank?
+        avatar = "https://d1iu1mag0u723c.cloudfront.net/assets/no-avatar-25359d55aa3c93ab3466622fd2ce712d.jpg"
+      end
+    end
 
 
   

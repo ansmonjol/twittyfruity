@@ -18,15 +18,13 @@ body{
 }
 
 .profile_bloc_pic{
-	margin-left: 20px;
-	border-radius: 75px;
-	height: 65px;
-	width: 65px;
-	background: image-url('my_profil_pic.jpg') center no-repeat;
-	border: 1px solid #f9f9f9;
-	background-size: cover;
-	float: left;
-	background-position: center center;
+		float: left;
+	img{
+		margin-left: 20px;
+		border-radius: 75px;
+		height: 65px;
+		width: 65px;		
+	}
 }
 
 .profile_bloc_infos{
@@ -97,7 +95,7 @@ body{
 	margin-bottom: 15px;
 	background-color: white;
 	border: 1px #49c5fc solid;
-	padding: 2%;
+	padding: 17px;
 }
 
 .post_fruit{
@@ -116,7 +114,20 @@ body{
 	padding: 10px 30px;
 	font-size: 14px;
 	outline: none;
+}
 
+.post_fruit_red{
+	width: auto;
+	float: left;
+	margin-left: 0;
+	border: none;
+	border-radius: 0;
+	font-family: 'Karla', sans-serif;
+	background-color: #FCB449;
+	color: white;
+	padding: 10px 30px;
+	font-size: 14px;
+	outline: none;
 }
 
 .post_fruit:hover {
@@ -139,16 +150,14 @@ body{
 }
 
 .tweet_pic1{
-	margin-left: 20px;
-	border-radius: 75px;
-	height: 65px;
-	width: 65px;
-	background:image-url('profil_pic_1.png') center no-repeat;
-	border: 1px solid #f9f9f9;
-	background-size: cover;
-	float: left;
-	background-position: center center;
-	margin-right: 20px;
+		margin-left: 20px;
+		border-radius: 75px;
+	img{
+		height: 65px;
+		width: 65px;
+		float: left;
+		margin-right: 20px;
+	}
 }
 
 .tweet_pic2{

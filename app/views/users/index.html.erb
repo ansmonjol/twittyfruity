@@ -6,7 +6,7 @@
 </div>
   <br>
   <% if current_user.follow?(user) %>
-    <%= link_to 'Unfollow', user_unfollow_path(user), method: :post, class: "post_fruit" %>
+    <%= link_to 'Unfollow', user_unfollow_path(user), method: :post, class: "post_fruit_red" %>
   <% else %>
     <%= link_to 'Follow', user_follow_path(user), method: :post, class: "post_fruit" %>
   <% end %>

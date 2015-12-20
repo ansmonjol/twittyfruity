@@ -1,30 +1,16 @@
-<h1>Liste de vos fruits !</h1>
-
-<br>
-<!-- Action -->
-<% if current_user == @user %>  
-<%= link_to 'New fruit', new_user_tweet_path(current_user), class: "post_fruit" %>
-<% end %>
-<br>
+<h1>Liste de vos fruitos </h1>
 <br>  
 <%= @tweets.find_each do |tweet| %>
-<!--<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= link_to "#{tweet.user.username}".capitalize , user_path(tweet.user) %></h3> at <%= tweet.created_at %>
+<div class="col2">
+ <div class="feed"><!-- List-->
+  <div class="tweet">
+    <div class="tweet_pic1"><%= image_tag @user.avatar %></div>
+    <span class="tweet_name"><%= link_to "#{tweet.user.username}".capitalize, user_path(tweet.user)%></span><span class="tweet_username">@curtis</span><span class="tweet_date"><%= time_ago_in_words tweet.created_at %></span>
+    <span class="tweet_content" style="color: black;">
+      <%= tweet.message %>
+    </span>
+    <a href="#" class="tweet_retweet">2</a>
   </div>
-  <div class="panel-body">-->
-    			<div class="col2">
-					<div class="feed"><!-- List-->
-				        <div class="tweet">
-				          <div class="tweet_pic1"></div>
-				            <span class="tweet_name"><%= link_to "#{tweet.user.username}".capitalize, user_path(tweet.user)%></span><span class="tweet_username">@curtis</span><span class="tweet_date"><%= time_ago_in_words tweet.created_at %></span>
-				            <span class="tweet_content" style="color: black;">
-				              <%= tweet.message %>
-				          </span>
-				          <a href="#" class="tweet_retweet">2</a>
-				        </div>
-						<% end %>	
-					</div>
-				</div>
-  <!--</div>
-</div>-->
+  <% end %>	
+</div>
+</div>
