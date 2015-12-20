@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   # Change redirection after user Sign in
   def after_sign_in_path_for(resource_or_scope)
-    events_manager_user_events_path(current_user)
+    user_path(current_user)
   end
 
 
